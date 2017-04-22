@@ -1,8 +1,17 @@
 <h1>Ticket Tracker Home Page</h1>
+<h3><%= erb :'_errors' %></h3>
 <% if current_user %>
-Create New Ticket
+<a href="/tickets/new">Create New Ticket</a> <br>
+<h3>Ticket Inventory</h3>
+<% current_user.tickets.each do |ticket| %>
+  Event Name:
+  <%= ticket.event.name %><br>
+  Initial Price:
+  <%= ticket.initial_price %><br><br>
+
+<% end %>
 <% else %>
 Please Login or Create New Account.
 <% end %>
 
-<img src="http://static.spin.com/files/2017/04/LilYachty_NEIL-FAVILA-1492114684-640x447.jpg">
+<!-- <br><img src="http://static.spin.com/files/2017/04/LilYachty_NEIL-FAVILA-1492114684-640x447.jpg"> -->

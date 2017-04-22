@@ -1,4 +1,10 @@
-<h1>Create New Ticket</h1>
+<h1>Add New Ticket</h1>
 <form action="/tickets" method="post">
-
+Event:
+<select name="event">
+  <%= @event_selection %>
+</select><br><br>
+Initial Price:
+<input type="text" name="initial_price"><br><br>
+<input type="submit" name="Add New Ticket">
 </form>
