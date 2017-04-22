@@ -3,8 +3,8 @@ require 'bcrypt'
 class User < ActiveRecord::Base
 	include BCrypt
 
-	validates :username, uniqueness: true
-	validates :username, :password, prescence: true
+	validates :username, {uniqueness: true}
+	validates :username, :password, presence: true
 
 	def password
 		@password ||= Password.new(password_hash)
