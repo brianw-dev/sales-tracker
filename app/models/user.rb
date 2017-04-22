@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 	validates :username, {uniqueness: true}
 	validates :username, :password, presence: true
 
+	has_many :tickets
+
 	def password
 		@password ||= Password.new(password_hash)
 	end

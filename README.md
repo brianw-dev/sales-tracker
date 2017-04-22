@@ -1,2 +1,2 @@
 ### Purpose
-ticket-tracker is a tool for managing the selling of tickets.
+ticket-tracker is a tool for managing the selling of tickets

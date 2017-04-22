@@ -1,3 +1,7 @@
 class Ticket < ActiveRecord::Base
-  # Remember to create a migration!
+  validates :initial_price, :user, :event, presence: true
+
+  belongs_to :user
+  belongs_to :event
+
 end
