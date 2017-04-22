@@ -3,7 +3,8 @@ class CreateTickets < ActiveRecord::Migration
   	create_table :tickets do |t|
   		t.integer :initial_price, null:false
   		t.integer :sell_price
-  		t.references :event
+  		t.references :user
+      t.references :event
 
   		t. timestamps null:false
     end
