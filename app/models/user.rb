@@ -3,7 +3,7 @@ require 'bcrypt'
 class User < ActiveRecord::Base
 	include BCrypt
 
-	validates :username, uniqueness: true
+	validates :username, {uniqueness: true}
 	validates :username, :password, presence: true
 
 	def password

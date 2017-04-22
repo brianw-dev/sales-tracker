@@ -18,6 +18,15 @@
   <title></title>
 </head>
 <body>
+<div id="link-button">
+<a href="/">Home</a>
+  <% if current_user %>
+    <%= erb :'_logout', layout: false %>
+  <% else %>
+    <a href="/sessions/new">Login</a>
+    <a href="/users/new">Sign Up</a>
+  <% end %>
+</div>
   <%= yield %>
 </body>
 </html>
