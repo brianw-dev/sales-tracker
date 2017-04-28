@@ -1,14 +1,16 @@
 <h1>Ticket Tracker Home Page</h1>
 <h3><%= erb :'_errors' %></h3>
 <% if current_user %>
-<a href="/tickets/new">Create New Ticket</a> <br>
-<h3>Ticket Inventory</h3>
-<% current_user.tickets.each do |ticket| %>
-  Event Name:
-  <%= ticket.event.name %><br>
-  Initial Price:
-  <%= ticket.initial_price %><br><br>
+<a href="/trackings/new">Create New Tracking</a> <br>
+<h3>Trackings</h3>
+<% current_user.trackings.each do |tracking| %>
 
+Tracking #: <%= tracking.id %><br>
+Number of Tickets: <%= tracking.num_of_tix %>
+Event Name:
+<%= tracking.event.name %><br>
+Order Cost:
+<%= tracking.order_cost %><br><br>
 <% end %>
 <% else %>
 Please Login or Create New Account.
