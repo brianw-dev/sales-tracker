@@ -9,5 +9,11 @@ end
 end
 
 10.times do
-  Tracking.create(order_cost: rand(20000..40000), num_of_tix: rand(1..16), user: User.all.sample, event: Event.all.sample)
+  Tracking.create(order_cost: rand(200..400), num_of_tix: rand(1..16), user: User.all.sample, event: Event.all.sample)
+end
+
+10.times do
+	Sale.create(price: rand(200.400),
+		num_of_tix: rand(1..16), user: User.all.sample, event: Event.all.sample
+		)
 end

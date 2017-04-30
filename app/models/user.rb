@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 	validates :username, :password, presence: true
 
 	has_many :trackings
+	has_many :sales
 
 	def password
 		@password ||= Password.new(password_hash)
