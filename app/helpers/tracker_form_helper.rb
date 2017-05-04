@@ -3,9 +3,9 @@ helpers do
     selection = ""
     Event.all.each do |event|
       if event_name == event.name
-        selection += "<option selected='selected' value='#{event.name}'>#{event.name}</option>"
+        selection += "<option selected='selected' value='#{event.name}'>#{event.name} #{event.date}</option>"
       else
-        selection += "<option value='#{event.name}'>#{event.name}</option>"
+        selection += "<option value='#{event.name}'>#{event.name} #{event.date}</option>"
       end
     end
     selection
