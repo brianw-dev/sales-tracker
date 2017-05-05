@@ -1,19 +1,22 @@
-<h1>Sales Tracker</h1>
 <h3><%= erb :'_errors' %></h3>
 <% if current_user %>
 
-<h3>Net Gain/Loss</h3>
-<%= net %><br><br>
+<div class="net">
+	<h2>Net Gain/Loss</h2>
+	<h4>$ <%= net %></h4><br><br>
+</div>
+
 <div id="display">
 	<div class="column">
 		<a href="/trackings/new">Add Tracking</a> <br>
 		<h3>Order Costs</h3>
-		<%= total_order_costs%>
+		$<%= total_order_costs%>
 		<h3>Trackings</h3>
 		<% current_user.trackings.each do |tracking| %>
 		<div class = "entry">
 		Number of Tickets: <%= tracking.num_of_tix %><br>
 		<%= tracking.event.name %><br>
+		<%= tracking.event.date %><br>
 		Order Cost:
 		$<%= tracking.order_cost %><br>
 		Tracking ID: <%= tracking.id %><br>
@@ -24,12 +27,13 @@
 	<div class="column">
 		<a href="/sales/new">Add Sale</a>
 		<h3>Total Sales</h3>
-		<%= total_sales %>
+		$<%= total_sales %>
 		<h3>Sales</h3>
 		<% current_user.sales.each do |sale| %>
 		<div class = "entry">
 		Number of Tickets: <%= sale.num_of_tix %><br>
 		<%= sale.event.name %><br>
+		<%= sale.event.date %><br>
 		Sale Price:
 		$<%= sale.price %><br>
 		Sale ID: <%= sale.id %><br>
@@ -38,9 +42,8 @@
 	</div>
 </div>
 <% else %>
-Please Login or Create New Account.
+<div class='lilyachty'>
+<img src="/giphy.gif">
+</div>
 <% end %>
 
-
-
-<!-- <br><img src="http://static.spin.com/files/2017/04/LilYachty_NEIL-FAVILA-1492114684-640x447.jpg"> -->
