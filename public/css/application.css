@@ -1,8 +1,8 @@
 body {
   counter-reset:section;
-  background-color: #F6F6EF;
+  background-color: white;
   font-family: Verdana;
-  max-width: 1500px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -26,3 +26,5 @@ header h1 {
 	border: 1px solid black;
 	margin: 5px;
 }
+
+
